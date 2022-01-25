@@ -1,19 +1,25 @@
 #include "Application.h"
 
+#include <memory>
+
 namespace HazelNut {
 	
-	HazelNut::Application::Application()
+	Application::Application()
+	{
+		Logger = std::make_unique<Log>();
+		Logger->Init();
+		CORE_LOG_WARN("Initialized Logger");
+	}
+
+	Application::~Application()
 	{
 
 	}
 
-	HazelNut::Application::~Application()
+	void Application::Run()
 	{
-
-	}
-
-	void HazelNut::Application::Run()
-	{
-		while (true);
+		while (true)
+		{
+		};
 	}
 }
