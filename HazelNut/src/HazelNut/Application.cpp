@@ -1,4 +1,6 @@
 #include "Application.h"
+#include "Events/ApplicationEvent.h"
+#include "HazelNut/Log.h"
 
 #include <memory>
 
@@ -18,6 +20,8 @@ namespace HazelNut {
 
 	void Application::Run()
 	{
+		WindowResizeEvent e(1920, 1080);
+		CORE_LOG_INFO(e);
 		while (true)
 		{
 		};

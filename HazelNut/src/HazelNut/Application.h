@@ -3,6 +3,7 @@
 #include "Core.h"
 #include "Log.h"
 
+
 namespace HazelNut {
 
 	class HAZELNUT_API Application

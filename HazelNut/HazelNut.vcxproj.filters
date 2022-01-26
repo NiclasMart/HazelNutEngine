@@ -4,6 +4,9 @@
     <Filter Include="HazelNut">
       <UniqueIdentifier>{50CAFD3C-3C97-5848-65B0-46F051DC8DD6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="HazelNut\Events">
+      <UniqueIdentifier>{34BC5EB0-A047-CC74-A958-4F6915632875}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\HazelNut.h" />
@@ -15,6 +18,18 @@
     </ClInclude>
     <ClInclude Include="src\HazelNut\EntryPoint.h">
       <Filter>HazelNut</Filter>
+    </ClInclude>
+    <ClInclude Include="src\HazelNut\Events\ApplicationEvent.h">
+      <Filter>HazelNut\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\HazelNut\Events\Event.h">
+      <Filter>HazelNut\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\HazelNut\Events\KeyEvent.h">
+      <Filter>HazelNut\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\HazelNut\Events\MouseEvent.h">
+      <Filter>HazelNut\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\HazelNut\Log.h">
       <Filter>HazelNut</Filter>
