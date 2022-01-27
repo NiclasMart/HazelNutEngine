@@ -1,3 +1,6 @@
 [submodule "HazelNut/vendor/spdlog"]
 	path = HazelNut/vendor/spdlog
 	url = https://github.com/gabime/spdlog
+[submodule "HazelNut/vendor/GLFW"]
+	path = HazelNut/vendor/GLFW
+	url = https://github.com/NiclasMart/glfw

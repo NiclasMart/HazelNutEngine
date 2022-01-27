@@ -1,5 +1,6 @@
 #pragma once
 
+#include "hzn_pch.h"
 #include "HazelNut/Core.h"
 
 namespace HazelNut {

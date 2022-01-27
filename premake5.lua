@@ -11,6 +11,12 @@ workspace "HazelNut"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+-- Include directories relative to root folder (solution directory)
+IncludeDir = {}
+IncludeDir["GLFW"] = "HazelNut/vendor/GLFW/include"
+
+include "HazelNut/vendor/GLFW"
+
 project "HazelNut"
 	location "HazelNut"
 	kind "SharedLib"
@@ -31,7 +37,14 @@ project "HazelNut"
 	includedirs
 	{
 		"%{prj.name}/src",
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDir.GLFW}"
+	}
+
+	links
+	{
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"
@@ -62,6 +75,10 @@ project "HazelNut"
 		defines "HZN_DIST"
 		optimize "On"
 
+	ignoredefaultlibraries {
+		"libcmtd"
+	}
+
 
 project "Sandbox"
 	location "Sandbox"
@@ -79,8 +96,8 @@ project "Sandbox"
 
 	includedirs
 	{
-		"HazelNut/vendor/spdlog/include",
-		"HazelNut/src"
+		"HazelNut/src",
+		"HazelNut/vendor/spdlog/include"
 	}
 
 	links

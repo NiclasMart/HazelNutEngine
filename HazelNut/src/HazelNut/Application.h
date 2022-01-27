@@ -2,6 +2,7 @@
 
 #include "Core.h"
 #include "Log.h"
+#include "Window.h"
 
 
 namespace HazelNut {
@@ -15,6 +16,9 @@ namespace HazelNut {
 		void Run();
 	private:
 		std::unique_ptr<Log> Logger;
+		std::unique_ptr<Window> m_Window;
+
+		bool m_Running = true;
 
 	};
 

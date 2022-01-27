@@ -11,6 +11,8 @@ namespace HazelNut {
 		Logger = std::make_unique<Log>();
 		Logger->Init();
 		CORE_LOG_WARN("Initialized Logger");
+
+		m_Window = std::unique_ptr<Window>(Window::Create());
 	}
 
 	Application::~Application()
@@ -20,10 +22,9 @@ namespace HazelNut {
 
 	void Application::Run()
 	{
-		WindowResizeEvent e(1920, 1080);
-		CORE_LOG_INFO(e);
-		while (true)
+		while (m_Running)
 		{
+			m_Window->OnUpdate();
 		};
 	}
 }
