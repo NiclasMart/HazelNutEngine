@@ -2,8 +2,6 @@
 
 #include "Event.h"
 
-#include <sstream>
-
 namespace HazelNut {
 
 	class HAZELNUT_API KeyEvent : public Event 

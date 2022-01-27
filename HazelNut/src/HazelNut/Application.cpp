@@ -1,8 +1,8 @@
+#include "hzn_pch.h"
+
 #include "Application.h"
 #include "Events/ApplicationEvent.h"
 #include "HazelNut/Log.h"
-
-#include <memory>
 
 namespace HazelNut {
 	

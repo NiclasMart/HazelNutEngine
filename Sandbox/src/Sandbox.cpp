@@ -1,7 +1,5 @@
 #include <HazelNut.h>
 
-#include <iostream>
-
 
 class Sandbox : public HazelNut::Application
 {

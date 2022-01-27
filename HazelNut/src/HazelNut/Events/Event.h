@@ -2,9 +2,6 @@
 
 #include "HazelNut/Core.h"
 
-#include <string>
-#include <functional>
-
 namespace HazelNut {
 
 	//Events in HazelNut are currently blocking, meaning when an event occurs it

@@ -19,6 +19,9 @@ project "HazelNut"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
+	pchheader "hzn_pch.h"
+	pchsource "HazelNut/src/hzn_pch.cpp"
+
 	files
 	{
 		"%{prj.name}/src/**.h",
