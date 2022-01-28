@@ -14,7 +14,11 @@ namespace HazelNut {
 		virtual ~Application();
 		
 		void Run();
+
+		void OnEvent(Event& event);
 	private:
+		bool OnWindowClose(class WindowCloseEvent& e);
+
 		std::unique_ptr<Log> Logger;
 		std::unique_ptr<Window> m_Window;
 

@@ -24,6 +24,7 @@ namespace HazelNut {
 
 	private:
 		virtual void Init(const WindowProps& props);
+		void SetGLFWCallbacks();
 		virtual void Shutdown();
 
 	private:

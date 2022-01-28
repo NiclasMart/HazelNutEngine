@@ -73,12 +73,16 @@ allows to get the type from the class without having an instance.
 		{
 		}
 
+		// gets called with a specific event type and a corresponding function
+		// if the event type matches the stored event type, the function gets executed
+		// else return false and the function could potentially be called with every event type
+		// until a type matches and the right function gets called
 		template<typename T>
 		bool Dispatch(EventFn<T> func)
 		{
-			if (m_Event.GetEventType() == T::GetStaticType()
+			if (m_Event.GetEventType() == T::GetStaticType())
 			{
-				m_Event.m_Handled = func)*(T*)&m_Event;
+				m_Event.m_Handled = func(*(T*)&m_Event);
 				return true;
 			}
 			return false;

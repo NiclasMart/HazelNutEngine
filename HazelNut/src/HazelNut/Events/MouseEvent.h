@@ -63,6 +63,7 @@ namespace HazelNut {
 
 	class HAZELNUT_API MouseButtonPressedEvent : public MouseButtonEvent
 	{
+	public:
 		MouseButtonPressedEvent(int button)
 			: MouseButtonEvent(button) {}
 

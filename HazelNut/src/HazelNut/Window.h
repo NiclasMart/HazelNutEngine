@@ -41,6 +41,9 @@ namespace HazelNut {
 		virtual void SetVSync(bool enabled) = 0;
 		virtual bool IsVSync() const = 0;
 
+		// the caller should not care, which window type he must create
+		// so the call is static from window and is redirected to the corresponding window class
+		// this function must be implemented by every window class
 		static Window* Create(const WindowProps& props = WindowProps());
 	};
 }
