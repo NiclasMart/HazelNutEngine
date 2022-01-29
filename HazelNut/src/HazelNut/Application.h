@@ -1,8 +1,9 @@
 #pragma once
 
 #include "Core.h"
-#include "Log.h"
 #include "Window.h"
+
+#include "LayerStack.h"
 
 
 namespace HazelNut {
@@ -16,6 +17,9 @@ namespace HazelNut {
 		void Run();
 
 		void OnEvent(Event& event);
+
+		void PushLayer(class Layer* layer);
+		void PushOverlay(Layer* overlay);
 	private:
 		bool OnWindowClose(class WindowCloseEvent& e);
 
@@ -23,6 +27,7 @@ namespace HazelNut {
 		std::unique_ptr<Window> m_Window;
 
 		bool m_Running = true;
+		LayerStack m_LayerStack;
 
 	};
 

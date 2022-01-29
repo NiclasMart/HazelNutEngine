@@ -20,4 +20,4 @@
 	#define HZN_CORE_ASSERT(x, ...)
 #endif
 
-#define BIT(x) (1 << x)
+#define SET_BITMAP(x) (1 << (x))

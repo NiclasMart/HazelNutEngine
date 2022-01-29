@@ -25,11 +25,11 @@ namespace HazelNut {
 	enum EventCategory
 	{
 		None = 0,
-		EventCategoryApplication = BIT(0),
-		EventCategoryInput = BIT(1),
-		EventCategoryKeyboard = BIT(2),
-		EventCategoryMouse = BIT(3),
-		EventCategoryMouseButton = BIT(4)
+		EventCategoryApplication = SET_BITMAP(0),
+		EventCategoryInput = SET_BITMAP(1),
+		EventCategoryKeyboard = SET_BITMAP(2),
+		EventCategoryMouse = SET_BITMAP(3),
+		EventCategoryMouseButton = SET_BITMAP(4)
 	};
 
 /*
@@ -45,8 +45,8 @@ allows to get the type from the class without having an instance.
 
 	class HAZELNUT_API Event
 	{
-		friend class EventDispatcher;
 	public:
+		bool Handled = false;
 		virtual EventType GetEventType() const = 0;
 		virtual const char* GetName() const = 0;
 		virtual int GetCategoryFlags() const = 0;
@@ -58,8 +58,6 @@ allows to get the type from the class without having an instance.
 			//uses bitwise AND to determine if there is an category match
 			return GetCategoryFlags() & category;
 		}
-	private:
-		bool m_Handled = false;
 	};
 
 	class EventDispatcher
@@ -82,7 +80,7 @@ allows to get the type from the class without having an instance.
 		{
 			if (m_Event.GetEventType() == T::GetStaticType())
 			{
-				m_Event.m_Handled = func(*(T*)&m_Event);
+				m_Event.Handled = func(*(T*)&m_Event);
 				return true;
 			}
 			return false;

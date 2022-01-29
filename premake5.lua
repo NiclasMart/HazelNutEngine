@@ -65,14 +65,17 @@ project "HazelNut"
 
 	filter "configurations:Debug"
 		defines "HZN_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "HZN_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "HZN_DIST"
+		buildoptions "/MD"
 		optimize "On"
 
 	ignoredefaultlibraries {
@@ -117,14 +120,17 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "HZN_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "HZN_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "HZN_DIST"
+		buildoptions "/MD"
 		optimize "On"
 
 

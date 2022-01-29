@@ -2,6 +2,8 @@
 
 #include "Application.h"
 #include "Events/ApplicationEvent.h"
+#include "HazelNut/LayerStack.h"
+#include "HazelNut/Layer.h"
 
 #include <GLFW/glfw3.h>
 
@@ -30,6 +32,10 @@ namespace HazelNut {
 		{
 			glClearColor(1, 0, 1, 1);
 			glClear(GL_COLOR_BUFFER_BIT);
+
+			for (Layer* layer : m_LayerStack)
+				layer->OnUpdate();
+
 			m_Window->OnUpdate();
 		};
 	}
@@ -39,7 +45,17 @@ namespace HazelNut {
 		EventDispatcher dispatcher(event);
 		dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(Application::OnWindowClose));
 
-		CORE_LOG_TRACE("{0}", event);
+		m_LayerStack.PassEventToLayers(event);
+	}
+
+	void Application::PushLayer(class Layer* layer)
+	{
+		m_LayerStack.PushLayer(layer);
+	}
+
+	void Application::PushOverlay(Layer* overlay)
+	{
+		m_LayerStack.PushOverlay(overlay);
 	}
 
 	bool Application::OnWindowClose(WindowCloseEvent& e)
