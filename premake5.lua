@@ -14,8 +14,10 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 -- Include directories relative to root folder (solution directory)
 IncludeDir = {}
 IncludeDir["GLFW"] = "HazelNut/vendor/GLFW/include"
+IncludeDir["Glad"] = "HazelNut/vendor/Glad/include"
 
 include "HazelNut/vendor/GLFW"
+include "HazelNut/vendor/Glad"
 
 project "HazelNut"
 	location "HazelNut"
@@ -38,12 +40,14 @@ project "HazelNut"
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}"
 	}
 
 	links
 	{
 		"GLFW",
+		"Glad",
 		"opengl32.lib"
 	}
 
@@ -55,7 +59,8 @@ project "HazelNut"
 		defines
 		{
 			"HZN_PLATFORM_WINDOWS",
-			"HZN_BUILD_DLL"
+			"HZN_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands

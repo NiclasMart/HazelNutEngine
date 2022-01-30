@@ -5,7 +5,7 @@
 #include "HazelNut/LayerStack.h"
 #include "HazelNut/Layer.h"
 
-#include <GLFW/glfw3.h>
+#include <glad/glad.h>
 
 namespace HazelNut {
 
