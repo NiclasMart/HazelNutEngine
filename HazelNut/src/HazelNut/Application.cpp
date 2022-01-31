@@ -10,9 +10,14 @@
 namespace HazelNut {
 
 #define BIND_EVENT_FN(x) std::bind(&x, this, std::placeholders::_1)
+
+	Application* Application::s_Instance = nullptr;
 	
 	Application::Application()
 	{
+		HZN_CORE_ASSERT(!s_Instance, "Application already exists!");
+		s_Instance = this;
+
 		Logger = std::make_unique<Log>();
 		Logger->Init();
 		CORE_LOG_WARN("Initialized Logger");
@@ -51,11 +56,13 @@ namespace HazelNut {
 	void Application::PushLayer(class Layer* layer)
 	{
 		m_LayerStack.PushLayer(layer);
+		layer->OnAttch();
 	}
 
 	void Application::PushOverlay(Layer* overlay)
 	{
 		m_LayerStack.PushOverlay(overlay);
+		overlay->OnAttch();
 	}
 
 	bool Application::OnWindowClose(WindowCloseEvent& e)

@@ -20,6 +20,9 @@ namespace HazelNut {
 
 		void PushLayer(class Layer* layer);
 		void PushOverlay(Layer* overlay);
+
+		inline static Application& Get() { return *s_Instance; }
+		inline Window& GetWindow() const { return *m_Window; }
 	private:
 		bool OnWindowClose(class WindowCloseEvent& e);
 
@@ -28,7 +31,8 @@ namespace HazelNut {
 
 		bool m_Running = true;
 		LayerStack m_LayerStack;
-
+	private:
+		static Application* s_Instance;
 	};
 
 	//Implemented by the client
