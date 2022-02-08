@@ -18,6 +18,15 @@ namespace HazelNut {
 		virtual void OnEvent(Event& event) override;
 	private:
 		float m_time;
+
+		bool OnMouseButtonPressedEvent(class MouseButtonPressedEvent& e);
+		bool OnMouseButtonReleasedEvent(class MouseButtonReleasedEvent& e);
+		bool OnMouseMovedEvent(class MouseMovedEvent& e);
+		bool OnMouseScrolledEvent(class MouseScrollEvent& e);
+		bool OnKeyPressedEvent(class KeyPressedEvent& e);
+		bool OnKeyReleasedEvent(class KeyReleasedEvent& e);
+		bool OnKeyTypedEvent(class KeyTypedEvent& e);
+		bool OnWindowResizeEvent(class WindowResizeEvent& e);
 	};
 }
 

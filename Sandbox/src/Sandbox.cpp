@@ -12,13 +12,13 @@ public:
 
 	virtual void OnUpdate() override
 	{
-		LOG_TRACE("Update on Example Layer called!");
+		/*LOG_TRACE("Update on Example Layer called!");*/
 	}
 
 	virtual void OnEvent(HazelNut::Event& event) override
 	{
-		LOG_TRACE("{1}", event);
-		event.Handled = true;
+		/*LOG_TRACE("{1}", event);
+		event.Handled = true;*/
 	}
 
 };

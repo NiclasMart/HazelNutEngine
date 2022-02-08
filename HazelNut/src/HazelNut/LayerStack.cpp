@@ -51,7 +51,9 @@ namespace HazelNut {
 
 	void LayerStack::PassEventToLayers(Event& event)
 	{
-		for (auto it = m_Layers.cbegin(); it != m_Layers.cend(); it--)
+		if (m_Layers.size() == 0) return;
+
+		for (auto it = m_Layers.end() - 1; it != m_Layers.begin(); it--)
 		{
 			(*it)->OnEvent(event);
 			if (event.Handled)
