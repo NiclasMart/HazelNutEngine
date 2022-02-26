@@ -25,6 +25,7 @@ project "HazelNut"
 	location "HazelNut"
 	kind "SharedLib"
 	language "C++"
+	staticruntime "off"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -74,17 +75,17 @@ project "HazelNut"
 
 	filter "configurations:Debug"
 		defines "HZN_DEBUG"
-		buildoptions "/MDd"
+		runtime "Debug"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "HZN_RELEASE"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "HZN_DIST"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
 
 	ignoredefaultlibraries {
@@ -96,6 +97,7 @@ project "Sandbox"
 	location "Sandbox"
 	kind "ConsoleApp"
 	language "C++"
+	staticruntime "off"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -129,17 +131,17 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "HZN_DEBUG"
-		buildoptions "/MDd"
+		runtime "Debug"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "HZN_RELEASE"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "HZN_DIST"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
 
 

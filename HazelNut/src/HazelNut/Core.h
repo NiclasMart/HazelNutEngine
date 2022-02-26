@@ -12,9 +12,13 @@
 	#error HazelNut only supports Windows!
 #endif
 
+#ifdef HZN_DEBUG
+	#define HZN_ENABLE_ASSERTS
+#endif
+
 #ifdef HZN_ENABLE_ASSERTS
-	#define HZN_ASSERT(x, ...) { if(!(x)) { HZ_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
-	#define HZN_CORE_ASSERT(x, ...) { if(!(x)) { HZ_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+	#define HZN_ASSERT(x, ...) { if(!(x)) { LOG_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+	#define HZN_CORE_ASSERT(x, ...) { if(!(x)) { CORE_LOG_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
 #else
 	#define HZN_ASSERT(x, ...)
 	#define HZN_CORE_ASSERT(x, ...)

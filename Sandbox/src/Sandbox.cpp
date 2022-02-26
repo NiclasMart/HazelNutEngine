@@ -30,7 +30,9 @@ public:
 	Sandbox()
 	{
 		PushLayer(new ExampleLayer());
-		PushOverlay(new HazelNut::ImGuiLayer());
+		auto UI = new HazelNut::ImGuiLayer();
+		PushOverlay(UI);
+		//UI->CreateUIWindow();
 	}
 
 	~Sandbox()
