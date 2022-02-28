@@ -16,6 +16,8 @@ IncludeDir = {}
 IncludeDir["GLFW"] = "HazelNut/vendor/GLFW/include"
 IncludeDir["Glad"] = "HazelNut/vendor/Glad/include"
 IncludeDir["ImGui"] = "HazelNut/vendor/imgui"
+IncludeDir["glm"] = "HazelNut/vendor/glm"
+
 
 group "Dependencies"
 	include "HazelNut/vendor/GLFW"
@@ -28,6 +30,7 @@ project "HazelNut"
 	kind "SharedLib"
 	language "C++"
 	staticruntime "off"
+	toolset "v142"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -47,7 +50,8 @@ project "HazelNut"
 		"%{prj.name}/vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
-		"%{IncludeDir.ImGui}"
+		"%{IncludeDir.ImGui}",
+		"%{IncludeDir.glm}",
 	}
 
 	links
@@ -100,6 +104,7 @@ project "Sandbox"
 	kind "ConsoleApp"
 	language "C++"
 	staticruntime "off"
+	toolset "v142"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -113,7 +118,9 @@ project "Sandbox"
 	includedirs
 	{
 		"HazelNut/src",
-		"HazelNut/vendor/spdlog/include"
+		"HazelNut/vendor/spdlog/include",
+		"%{IncludeDir.glm}"
+
 	}
 
 	links

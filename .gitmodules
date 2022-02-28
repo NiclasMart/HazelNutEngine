@@ -7,3 +7,6 @@
 [submodule "HazelNut/vendor/imgui"]
 	path = HazelNut/vendor/imgui
 	url = https://github.com/NiclasMart/imgui
+[submodule "HazelNut/vendor/glm"]
+	path = HazelNut/vendor/glm
+	url = https://github.com/g-truc/glm
