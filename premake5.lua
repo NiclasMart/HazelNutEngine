@@ -17,9 +17,11 @@ IncludeDir["GLFW"] = "HazelNut/vendor/GLFW/include"
 IncludeDir["Glad"] = "HazelNut/vendor/Glad/include"
 IncludeDir["ImGui"] = "HazelNut/vendor/imgui"
 
-include "HazelNut/vendor/GLFW"
-include "HazelNut/vendor/Glad"
-include "HazelNut/vendor/imgui"
+group "Dependencies"
+	include "HazelNut/vendor/GLFW"
+	include "HazelNut/vendor/Glad"
+	include "HazelNut/vendor/imgui"
+group ""
 
 project "HazelNut"
 	location "HazelNut"
@@ -70,7 +72,7 @@ project "HazelNut"
 
 		postbuildcommands
 		{
-			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
+			("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Sandbox/\"")
 		}
 
 	filter "configurations:Debug"
