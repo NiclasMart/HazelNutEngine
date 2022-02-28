@@ -53,7 +53,7 @@ namespace HazelNut {
 	{
 		if (m_Layers.size() == 0) return;
 
-		for (auto it = m_Layers.end() - 1; it != m_Layers.begin(); it--)
+		for (auto it = m_Layers.rbegin(); it != m_Layers.rend(); it++)
 		{
 			(*it)->OnEvent(event);
 			if (event.Handled)
