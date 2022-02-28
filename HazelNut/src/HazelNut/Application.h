@@ -1,9 +1,13 @@
 #pragma once
 
 #include "Core.h"
-#include "Window.h"
 
+#include "Window.h"
 #include "LayerStack.h"
+#include "HazelNut/Events/Event.h"
+#include "HazelNut/Events/ApplicationEvent.h"
+#include "HazelNut/Events/KeyEvent.h"
+#include "HazelNut/Events/MouseEvent.h"
 
 
 namespace HazelNut {

@@ -158,9 +158,11 @@
     <ClInclude Include="src\HazelNut\Events\ApplicationEvent.h" />
     <ClInclude Include="src\HazelNut\Events\Event.h" />
     <ClInclude Include="src\HazelNut\Events\KeyEvent.h" />
+    <ClInclude Include="src\HazelNut\Events\MouseButtonCodes.h" />
     <ClInclude Include="src\HazelNut\Events\MouseEvent.h" />
     <ClInclude Include="src\HazelNut\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\HazelNut\Input.h" />
+    <ClInclude Include="src\HazelNut\Events\KeyCodes.h" />
     <ClInclude Include="src\HazelNut\Layer.h" />
     <ClInclude Include="src\HazelNut\LayerStack.h" />
     <ClInclude Include="src\HazelNut\Log.h" />

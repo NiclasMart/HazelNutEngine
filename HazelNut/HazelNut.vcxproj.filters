@@ -70,6 +70,8 @@
     <ClInclude Include="src\hzn_pch.h" />
     <ClInclude Include="src\HazelNut\Input.h" />
     <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
+    <ClInclude Include="src\HazelNut\Events\MouseButtonCodes.h" />
+    <ClInclude Include="src\HazelNut\Events\KeyCodes.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\HazelNut\Application.cpp">

@@ -12,13 +12,23 @@ public:
 
 	virtual void OnUpdate() override
 	{
-		/*LOG_TRACE("Update on Example Layer called!");*/
+		if (HazelNut::Input::IsKeyPressed(HZN_KEY_A))
+		{
+			LOG_TRACE("Button A was pressed (polling).");
+		}
 	}
 
 	virtual void OnEvent(HazelNut::Event& event) override
 	{
-		/*LOG_TRACE("{1}", event);
-		event.Handled = true;*/
+		LOG_TRACE("Button A was pressed (event).");
+		if (event.GetEventType() == HazelNut::EventType::KeyPressed)
+		{
+			HazelNut::KeyPressedEvent& e = (HazelNut::KeyPressedEvent&)event;
+			if (e.GetKeyCode() == HZN_KEY_A)
+			{
+				LOG_TRACE("Button A was pressed (event).");
+			}
+		}
 	}
 
 };
